@@ -132,7 +132,7 @@ class search extends Component{
   
 
   render(){
-    if(this.state.movie1){
+    if(this.state.movie){
   const img='url(https://image.tmdb.org/t/p/original/'+this.state.movie.backdrop_path+')'
   console.log(this.state.movie1)
   
