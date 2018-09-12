@@ -125,16 +125,15 @@ class search extends Component{
   .then(res=>{return res.json()})
   .then(data=>{
     this.setState({movie:data})
-    fetch("http://www.omdbapi.com/?i="+this.state.movie.imdb_id+"&apikey=cda138e1")
-    .then(res=>{return res.json()})
-    .then(data=>{this.setState({movie1:data})})})
+    })
 }
   
 
   render(){
-    if(this.state.movie1){
+    
+    if(this.state.movie){
   const img='url(https://image.tmdb.org/t/p/original/'+this.state.movie.backdrop_path+')'
-  console.log(this.state.movie1)
+  console.log(this.state.movie)
   
     return(
       <div className="black " >
@@ -146,12 +145,10 @@ class search extends Component{
   <h1 class="mb3 mt3 lh-title">{this.state.movie.title}</h1>
   <div class="fn fl-ns w-50-ns  " id="nop" style={{}} >
     <p class="lh-copy measure mt6 mt0-ns " style={{fontSize:"30px"}}>
-      {this.state.movie1.Plot}
+      {this.state.movie.overview}
     </p>
     <p class="lh-copy measure">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg" width="55px" height="55px"  alt="imdb"/><a style={{fontSize:"25px"}} >:{this.state.movie1.Ratings[0].Value}</a>
-    <img src="https://vignette.wikia.nocookie.net/logopedia/images/9/9c/Rotten_Tomatoes_2.svg/revision/latest?cb=20160706062736" style={{paddingLeft:"25px"}} width="75px" height="55px" alt="RT"/><a style={{fontSize:"25px"}} >:{this.state.movie1.Ratings[1].Value}</a>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Metacritic.svg/1024px-Metacritic.svg.png" width="75px" height="65px" style={{paddingLeft:"25px"}} alt="Mt"/><a style={{fontSize:"25px"}} >:{this.state.movie1.Ratings[2].Value}</a>
+    <a style={{paddingLeft:"25px"}} style={{fontSize:"25px"}} >Ratings:{this.state.movie.vote_average}</a>
     </p>
   </div>
 </article>
