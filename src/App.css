@@ -1,0 +1,30 @@
+.logo {
+  display: inline-flex;
+}
+.App-header {
+  height: 50px;
+  padding-top: 25px;
+  width:auto;
+}
+ 
+.article{
+padding: 10px 62px;
+}
+
+.banner{
+background-size: auto; 
+background-position: center;
+}
+
+#banner{
+	background-size: cover;
+ 
+}
+p {
+    color: black;
+    
+}
+
+#nop{
+
+}
